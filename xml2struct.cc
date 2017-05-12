@@ -107,7 +107,7 @@ mxArray* parse_family(list_node family)
             } else if (sibling_children->second[0]->first_node()->type() == node_element) {
                 value = parse_family(sibling_children->second);
             } else {
-                int size = sibling_children->second.size();
+                unsigned long size = sibling_children->second.size();
                 if (size > 1) {
                     value = mxCreateCellArray(1, &size);
                     for (i = 0; i < size; i++) {
@@ -129,7 +129,7 @@ mxArray* parse_family(list_node family)
 
 mxArray* parse_arrays(list_node arrays)
 {
-    int n_arrays = arrays.size();
+    unsigned long n_arrays = arrays.size();
     mxArray* data = mxCreateCellArray(1, &n_arrays);
     bool has_size;
     for (int i_array = 0; i_array < n_arrays; i_array++) {
@@ -145,7 +145,7 @@ mxArray* parse_arrays(list_node arrays)
             dims = vector<int>(1, 1);
         }
         int n_dims = dims.size();
-        int* dims_arr = new int[n_dims];
+        unsigned long* dims_arr = new unsigned long[n_dims];
         for (int i = 0; i < n_dims; i++) {
             dims_arr[i] = dims[i];
         }
