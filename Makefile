@@ -1,4 +1,4 @@
-BOOST ?= /usr/local/opt/boost/include
+BOOST ?= /usr/local/include
 CC ?= c++
 CXX ?= c++
 LD ?= c++
